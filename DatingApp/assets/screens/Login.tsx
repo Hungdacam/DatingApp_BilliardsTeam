@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, Image,TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-export default function Login() {
+export function Login() {
   return (
     <View style={styles.container}>
-      <Image source={require('./assets/images/logo.png')} style={styles.imageContainer}/>
+      <Image source={require('../images/logo.png')} style={styles.imageContainer}/>
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>
           HeartSync
