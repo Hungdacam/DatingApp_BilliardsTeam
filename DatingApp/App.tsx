@@ -9,14 +9,16 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="ProfileCard">
         <Stack.Screen
         name="Login"
         component={Login}
+        options={{headerShown:false}}
         />
         <Stack.Screen
         name="ProfileCard"
         component={ProfileCard}
+        options={{headerShown:false}}
         />
       </Stack.Navigator>
     </NavigationContainer>

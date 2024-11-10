@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function ProfileCard() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <FontAwesome name="bars" size={24} color="black" />
         <Text style={styles.title}>HeartSync</Text>
@@ -47,7 +48,7 @@ export default function ProfileCard() {
 
         <View style={styles.info}>
           <Text style={styles.name}>
-            Ava Jones, 25 <FontAwesome name="check-circle" size={16} color="blue" />
+            Ava Jones, 25 <FontAwesome name="check-circle" size={16} color="#00bfff" />
           </Text>
           <View style={styles.pronounsContainer}>
             <Text style={styles.pronouns}>she/her/hers</Text>
@@ -62,7 +63,7 @@ export default function ProfileCard() {
         <FontAwesome name="bookmark" size={24} color="gray" />
         <FontAwesome name="user" size={24} color="gray" />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -101,8 +102,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    marginVertical: 20,
-    height: 610,
+    marginVertical: 30,
+    height: 665,
     width: 372,
   },
   overlay: {
@@ -150,7 +151,7 @@ const styles = StyleSheet.create({
   },
   pronounsContainer: {
     backgroundColor: '#00bfff', // Background color for the pronouns box
-    paddingVertical: 4,
+    marginVertical: 4,
     paddingHorizontal: 8,
     borderRadius: 20, // Border radius for the pronouns box
     marginBottom: 10,
@@ -174,6 +175,7 @@ const styles = StyleSheet.create({
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 10,
+    paddingBottom: 20,
+    
   },
 });
