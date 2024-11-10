@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, Button, TouchableOpacity} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
+import { useNavigation } from '@react-navigation/native';
 export default function ProfileCard() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -61,7 +62,11 @@ export default function ProfileCard() {
         <FontAwesome name="undo" size={24} color="gray" />
         <FontAwesome name="heart" size={24} color="skyblue" />
         <FontAwesome name="bookmark" size={24} color="gray" />
+        <TouchableOpacity 
+        onPress={()=>navigation.goBack()}>
         <FontAwesome name="user" size={24} color="gray" />
+        </TouchableOpacity>
+        
       </View>
     </SafeAreaView>
   );
@@ -101,14 +106,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
-    marginVertical: 30,
-    height: 665,
+    marginVertical: 25,
+    height: '100%',
     width: 372,
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(146, 202, 219, 0.4)',
+    height:'100%'
   },
   swipeContainer: {
     flexDirection: 'row',

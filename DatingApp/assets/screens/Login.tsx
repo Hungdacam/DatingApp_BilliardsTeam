@@ -1,6 +1,11 @@
 import { StyleSheet, Text, View, Image,TouchableOpacity, SafeAreaView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import {useNavigation}  from '@react-navigation/native';
 export function Login() {
+  const navigation = useNavigation();
+  function handleLogin(){
+    navigation.navigate("ProfileCard");
+  }
   return (
     <SafeAreaView style={styles.container}>
       <Image source={require('../images/logo.png')} style={styles.imageContainer}/>
@@ -14,19 +19,25 @@ export function Login() {
       </View>
       <View style={styles.buttonLogin}>
         {/* Apple Button */}
-      <TouchableOpacity style={[styles.button, styles.appleButton]}>
+      <TouchableOpacity 
+      onPress={handleLogin}
+      style={[styles.button, styles.appleButton]}>
         <FontAwesome name="apple" size={24} color="white" style={styles.icon} />
         <Text style={styles.buttonText}>Continue with Apple</Text>
       </TouchableOpacity>
 
       {/* Facebook Button */}
-      <TouchableOpacity style={[styles.button, styles.facebookButton]}>
+      <TouchableOpacity 
+      onPress={handleLogin}
+      style={[styles.button, styles.facebookButton]}>
         <FontAwesome name="facebook" size={24} color="white" style={styles.icon} />
         <Text style={styles.buttonText}>Continue with Facebook</Text>
       </TouchableOpacity>
 
       {/* Phone Number Button */}
-      <TouchableOpacity style={[styles.button, styles.phoneButton]}>
+      <TouchableOpacity 
+      onPress={handleLogin}
+      style={[styles.button, styles.phoneButton]}>
         <FontAwesome name="phone" size={24} color="white" style={styles.icon} />
         <Text style={styles.buttonText}>Use phone number</Text>
       </TouchableOpacity>
