@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {Login} from './assets/screens/Login'
 import ProfileCard from './assets/screens/ProfileCard'
 import FilterProfile from './assets/screens/FilterProfile'
+import EditProfile from './assets/screens/EditProfile';
 
 
 const Stack = createNativeStackNavigator();
@@ -24,6 +25,11 @@ export default function App() {
         <Stack.Screen
         name="FilterProfile"
         component={FilterProfile}
+        options={{headerShown:false}}
+        />
+        <Stack.Screen
+        name="EditProfile"
+        component={EditProfile}
         options={{headerShown:false}}
         />
       </Stack.Navigator>
