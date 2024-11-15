@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {Login} from './assets/screens/Login'
 import ProfileCard from './assets/screens/ProfileCard'
+import FilterProfile from './assets/screens/FilterProfile'
 
 
 const Stack = createNativeStackNavigator();
@@ -18,6 +19,11 @@ export default function App() {
         <Stack.Screen
         name="ProfileCard"
         component={ProfileCard}
+        options={{headerShown:false}}
+        />
+        <Stack.Screen
+        name="FilterProfile"
+        component={FilterProfile}
         options={{headerShown:false}}
         />
       </Stack.Navigator>
