@@ -4,7 +4,7 @@ import {useNavigation}  from '@react-navigation/native';
 export function Login() {
   const navigation = useNavigation();
   function handleLogin(){
-    navigation.navigate("ProfileCard");
+    navigation.navigate('ProfileCard');
   }
   return (
     <SafeAreaView style={styles.container}>
