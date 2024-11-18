@@ -9,6 +9,7 @@ import AccountSetting from './assets/screens/AccountSetting';
 import FilterProfile from './assets/screens/FilterProfile'
 import EditProfile from './assets/screens/EditProfile';
 import ChatScreen from './assets/screens/ChatScreen';
+import DetailProfile from './assets/screens/DetailProfile';
 
 type RootStackParamList = {
   Login: undefined; // Nếu màn hình không cần tham số
@@ -17,13 +18,14 @@ type RootStackParamList = {
   FilterProfile:undefined;
   EditProfile:undefined;
   ChatScreen:undefined;
+  DetailProfile:undefined;
 };
 
 const Stack =  createNativeStackNavigator<RootStackParamList>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="AccountSetting">
+      <Stack.Navigator initialRouteName="DetailProfile">
         <Stack.Screen
         name="Login"
         component={Login}
@@ -52,6 +54,11 @@ export default function App() {
         <Stack.Screen
         name="ChatScreen"
         component={ChatScreen}
+        options={{headerShown:false}}
+        />
+        <Stack.Screen
+        name="DetailProfile"
+        component={DetailProfile}
         options={{headerShown:false}}
         />
       </Stack.Navigator>
