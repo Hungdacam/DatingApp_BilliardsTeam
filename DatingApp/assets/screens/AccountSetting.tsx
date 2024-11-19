@@ -62,7 +62,7 @@ export default function AccountSetting() {
       </View>
       {/*verification*/}
       <View style={styles.verifyContainer}>
-      <FontAwesome name="shield" size={40} color="#808080" />          
+        <FontAwesome name="shield" size={40} color="#808080" />          
         <View style={styles.verifyTextContainer}>
             <Text style={styles.title}>
             Verification adds an extra layer of authenticity and trust to your profile.
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     justifyContent:'space-between',
     alignItems:'center',
     backgroundColor:'#D9FAFF',
-    padding:10,
+    padding:15,
     marginVertical:20,
     borderRadius:40
     
