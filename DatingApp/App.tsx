@@ -10,6 +10,7 @@ import FilterProfile from './assets/screens/FilterProfile'
 import EditProfile from './assets/screens/EditProfile';
 import ChatScreen from './assets/screens/ChatScreen';
 import DetailProfile from './assets/screens/DetailProfile';
+import MatchNotification from './assets/screens/MatchNotification';
 
 type RootStackParamList = {
   Login: undefined; // Nếu màn hình không cần tham số
@@ -21,7 +22,7 @@ type RootStackParamList = {
   DetailProfile:undefined;
 };
 
-const Stack =  createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function App() {
   return (
     <NavigationContainer>
