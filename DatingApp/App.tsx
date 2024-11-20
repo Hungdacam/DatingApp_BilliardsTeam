@@ -11,7 +11,7 @@ import EditProfile from './assets/screens/EditProfile';
 import ChatScreen from './assets/screens/ChatScreen';
 import DetailProfile from './assets/screens/DetailProfile';
 import MatchNotification from './assets/screens/MatchNotification';
-
+import SwiperProfile from './assets/screens/SwiperProfile'
 type RootStackParamList = {
   Login: undefined; // Nếu màn hình không cần tham số
   ProfileCard: undefined; // Hoặc { userId: string } nếu có tham số
@@ -21,6 +21,7 @@ type RootStackParamList = {
   ChatScreen:undefined;
   DetailProfile:undefined;
   MatchNotification:undefined;
+  SwiperProfile:undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -66,6 +67,11 @@ export default function App() {
         <Stack.Screen
         name="MatchNotification"
         component={MatchNotification}
+        options={{headerShown:false}}
+        />
+        <Stack.Screen 
+        name="SwiperProfile"
+        component={SwiperProfile}
         options={{headerShown:false}}
         />
       </Stack.Navigator>

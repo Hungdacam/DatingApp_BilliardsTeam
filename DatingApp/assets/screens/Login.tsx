@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View, Image,TouchableOpacity, SafeAreaView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import {useNavigation}  from '@react-navigation/native';
+import React from 'react';
 export function Login() {
   const navigation = useNavigation();
   function handleLogin(){
-    navigation.navigate('ProfileCard');
+    navigation.navigate('SwiperProfile');
   }
   return (
     <SafeAreaView style={styles.container}>

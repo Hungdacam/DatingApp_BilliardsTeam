@@ -50,7 +50,7 @@ export default function ProfileCard() {
             <View style={styles.pronounsContainer}>
               <Text style={styles.pronouns}>she/her/hers</Text>
             </View>
-            <Text style={styles.job}>Business Analyst at Tech</Text>
+            <Text style={styles.job}> Analyst at Tech</Text>
           </View>
         </ImageBackground>
         <View style={styles.footer}>
