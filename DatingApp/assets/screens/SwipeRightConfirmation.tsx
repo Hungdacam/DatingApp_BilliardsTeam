@@ -21,7 +21,7 @@ export default function SwipeRightConfirmation() {
         visible={modalVisible}
         onRequestClose={handleCancel}
       >
-        <View style={styles.modalOverlay}>
+        <View style={styles.modalOverlay}> 
           <View style={styles.modalContent}>
             <View style={styles.iconContainer}>
               <Text style={styles.icon}>➤</Text>

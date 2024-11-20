@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { View, Text, Modal, StyleSheet, TouchableOpacity, Image } from "react-native";
-
+import { useNavigation } from "@react-navigation/native";
 export default function MatchNotification() {
   const [isModalVisible, setModalVisible] = useState(true);
-
+  const navigation = useNavigation();
   const handleCloseModal = () => {
-    setModalVisible(false);
+    
+    navigation.navigate('DetailProfile');
   };
 
   return (
@@ -22,7 +23,7 @@ export default function MatchNotification() {
             {/* Profile Picture */}
             <Image
               source={{
-                uri: "https://picsum.photos/200", // Thay link này bằng link avatar thật
+                uri: "https://picsum.photos/200", // Thay link avatar thật
               }}
               style={styles.profileImage}
             />

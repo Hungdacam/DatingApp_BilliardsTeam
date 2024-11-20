@@ -20,6 +20,7 @@ type RootStackParamList = {
   EditProfile:undefined;
   ChatScreen:undefined;
   DetailProfile:undefined;
+  MatchNotification:undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -60,6 +61,11 @@ export default function App() {
         <Stack.Screen
         name="DetailProfile"
         component={DetailProfile}
+        options={{headerShown:false}}
+        />
+        <Stack.Screen
+        name="MatchNotification"
+        component={MatchNotification}
         options={{headerShown:false}}
         />
       </Stack.Navigator>
