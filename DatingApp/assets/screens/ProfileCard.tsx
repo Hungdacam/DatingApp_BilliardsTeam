@@ -8,8 +8,10 @@ import {
 } from "react-native";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ProfileCard() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView
@@ -55,7 +57,7 @@ export default function ProfileCard() {
           <FontAwesome name="user" size={24} color="gray" />
           <FontAwesome name="heart" size={24} color="#1DA1F2" />
           <FontAwesome name="bookmark" size={24} color="gray" />
-          <Ionicons name="send" size={24} color="gray" />
+          <Ionicons name="send" size={24} color="gray" onPress={() => navigation.navigate("ChatScreen")} />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f7f7f7",
     padding: 16,
     marginTop: 30,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   header: {
     flexDirection: "row",
