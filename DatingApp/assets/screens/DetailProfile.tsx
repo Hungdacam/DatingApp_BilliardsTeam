@@ -354,10 +354,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 2,
-    elevation: 5, // Đổ bóng trên Android
+    elevation: 5,
   },
   cancelButton: {
-    backgroundColor: "white", // Màu nền nút hủy
+    backgroundColor: "white", 
   },
   confirmButton: {
     backgroundColor: "#white",
