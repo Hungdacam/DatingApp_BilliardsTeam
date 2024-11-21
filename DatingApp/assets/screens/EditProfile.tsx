@@ -1,12 +1,19 @@
 import React from 'react';
 import { View, Text, TextInput, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome, MaterialIcons, Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function EditProfile() {
+  const navigation = useNavigation();
+    function handleGoBackAccountSetting(){
+      navigation.goBack();
+    }
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Ionicons name="arrow-back" size={24} color="black" />
+        <TouchableOpacity onPress={handleGoBackAccountSetting}>
+          <Ionicons name="arrow-back" size={24} color="black" />
+        </TouchableOpacity>
         <Text style={styles.headerTitle}>Edit profile</Text>
         <View style={{ width: 24 }} />
       </View>

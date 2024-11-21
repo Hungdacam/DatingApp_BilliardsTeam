@@ -15,14 +15,19 @@ import {
   Ionicons,
   Feather,
 } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ChatScreen() {
+  const navigation = useNavigation();
+  function handleGoBackListChat() {
+    navigation.goBack();
+  }
   return (
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.headerTop}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleGoBackListChat}>
             <Ionicons name="arrow-back" size={24} color="black" />
           </TouchableOpacity>
           <View style={styles.rightIcons}>

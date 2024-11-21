@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList, TextInput, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation }  from '@react-navigation/native';
 const App = () => {
   const matches = [
     { id: 1, name: 'Maria White', image: 'https://res.cloudinary.com/dxidi8djr/image/upload/v1732003658/z5067612742524_dbbf0002ec38cdb0b01d67d750e23e18_lajc8b.jpg' },
@@ -54,6 +55,17 @@ const App = () => {
     },
   ];
 
+  const navigation = useNavigation();
+  function handleProfile(){
+    navigation.navigate('SwiperProfile');
+  }
+  function handleAccountSetting(){
+    navigation.navigate('AccountSetting');
+  }
+  function handleChatScreen(){
+    navigation.navigate('ChatScreen');
+  }
+
   return (
     <View style={styles.container}>
       {/* Search Bar */}
@@ -83,7 +95,7 @@ const App = () => {
         data={chats}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.chatItem}>
+          <TouchableOpacity style={styles.chatItem} onPress={handleChatScreen}>
             <Image source={{ uri: item.image }} style={styles.chatImage} />
             <View style={styles.chatTextContainer}>
               <Text style={styles.chatName}>{item.name}</Text>
@@ -95,12 +107,18 @@ const App = () => {
       />
 
       <View style={styles.footer}>
-            <FontAwesome name="user" size={24} color="gray" />
-            <FontAwesome name="heart" size={24} color="skyblue" />
-            <FontAwesome name="bookmark" size={24} color="gray" />
-            <TouchableOpacity>
-            <FontAwesome name="user" size={24} color="gray" />
-            </TouchableOpacity>
+        <TouchableOpacity onPress={handleAccountSetting}>
+          <FontAwesome name="user" size={24} color="gray" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleProfile}>
+          <FontAwesome name="heart" size={24} color="gray" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <FontAwesome name="bookmark" size={24} color="gray" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <FontAwesome name="send" size={24} color="#1DA1F2" />
+        </TouchableOpacity>
       </View>
     </View>
   );
